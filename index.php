@@ -36,7 +36,15 @@
     <br>
 
     <?php 
-    echo $userBanana33->getDiscount();
+        echo $userBanana33->getDiscount();
+    ?>
+
+    <br>
+
+    <?php 
+    
+        echo $bone -> getPrice();
+
     ?>
 </body>
 </html>

@@ -17,7 +17,9 @@ class Toy extends Product {
         $this->barCode=$barCode;
     }
 
-
+    public function getPrice(){
+        return $this-> price;
+    }
 
 }
 

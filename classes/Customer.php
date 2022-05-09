@@ -20,15 +20,15 @@ class Customer extends User {
         $this->discount = $discount;
     }
 
-    function getDiscount(){
+    public function getDiscount(){
         if($this->isRegistered === true){
-            return 'L\'utente ha diritto al 20% di sconto';
+            return 'L\'utente ha diritto al 20% di sconto perchP è registrato';
         } else {
-            return 'L\'utente non ha diritto a sconti';
+            return 'L\'utente non ha diritto a sconti perché non è registrato';
         }
     }
 
-    function getName(){
+    public function getName(){
         return $this->name;
     }
 }
