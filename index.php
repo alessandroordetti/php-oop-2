@@ -1,9 +1,15 @@
 
 <?php 
 
-    include_once __DIR__ . "/classes/AnimalShop.php";
+    include_once __DIR__ . "/classes/Shop.php";
+    include_once __DIR__ . "/classes/Product.php";
+    include_once __DIR__ . "/classes/Customer.php";
 
-    $caniniGattiniShop = new AnimalShop ("Canini e Gattini carini", "www.caniniegattini.com", 'caniegatti@gmail.com', 'IT000E444W', 'Roma', 'Pedro La Cipolla', true)
+    $caniniGattiniShop = new Shop ("Canini e Gattini carini", "www.caniniegattini.com", 'caniegatti@gmail.com', 'IT000E444W', 'Roma (Italia), Via Del Campo 45', 'Pedro La Cipolla', true);
+
+    $productBone = new Product ('Osso biricchino', 'DUSHSFDS213213', true, '1000€', false, 'Toy');
+
+    $userBanana33 = new Customer ('Checco Zalone', '27', 'banana33@gmail.com', 'BANANA33', 'Banana33', true, null);
 
 ?>
 
@@ -21,6 +27,8 @@
 
     <?php 
         var_dump($caniniGattiniShop);
+        var_dump($productBone);
+        var_dump($userBanana33);
     
     ?>
 </body>
