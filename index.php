@@ -9,7 +9,7 @@
 
     $productBone = new Product ('Osso biricchino', 'DUSHSFDS213213', true, '1000€', false, 'Toy');
 
-    $userBanana33 = new Customer ('Checco Zalone', '27', 'banana33@gmail.com', 'BANANA33', 'Banana33', true, null);
+    $userBanana33 = new Customer ('Checco Zalone', '27', 'banana33@gmail.com', 'BANANA33', false, null, 'Banana33', true, null);
 
 ?>
 
@@ -29,7 +29,13 @@
         var_dump($caniniGattiniShop);
         var_dump($productBone);
         var_dump($userBanana33);
-    
+
+        echo $userBanana33->getName()    
     ?>
+
+    <br>
+
+    <?php echo $userBanana33->getDiscount();
+ ?>
 </body>
 </html>
