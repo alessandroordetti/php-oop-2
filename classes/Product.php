@@ -9,6 +9,4 @@ class Product {
         $this->type=$type;
     }
 }
-
-
 ?>

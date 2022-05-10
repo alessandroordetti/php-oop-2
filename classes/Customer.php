@@ -3,20 +3,12 @@
 include_once __DIR__ . "/User.php";
 
 class Customer extends User {
-    protected $name;
-    protected $age;
-    protected $email;
-    protected $password;
     protected $isRegistered;
     protected $discount;
     protected $creditCard;
 
-    function __construct($name, $age, $email, $password, $isRegistered, $discount, $userName, $isOnline, $preferences, $creditCard) {
-        parent::__construct($userName, $isOnline, $preferences);
-        $this->name = $name;
-        $this->age = $age;
-        $this->email = $email;
-        $this->password = $password;
+    function __construct($name, $lastname, $age, $email,$userName, $isOnline, $preferences, $isRegistered, $discount, $creditCard) {
+        parent::__construct($name, $lastname, $age, $email,$userName, $isOnline, $preferences);
         $this->isRegistered = $isRegistered;
         $this->discount = $discount;
         $this->creditCard = $creditCard;
@@ -24,9 +16,9 @@ class Customer extends User {
 
     public function getDiscount(){
         if($this->isRegistered === true){
-            return 'L\'utente ha diritto al 20% di sconto perchP è registrato';
+            return 'L\'utente ha diritto al 20% di sconto perché è registrato.';
         } else {
-            return 'L\'utente non ha diritto a sconti perché non è registrato';
+            return 'L\'utente non ha diritto a sconti perché non è registrato.';
         }
     }
 
@@ -35,7 +27,11 @@ class Customer extends User {
     }
 
     public function payOrder($productPrice){
-        return $this -> creditCard - $productPrice;
+        if($productPrice > $this->creditCard){
+            return 'Non hai credito sufficiente per effettuare l\'acquisto.';
+        } else {
+            return $this -> creditCard - $productPrice;
+        }
     }
 }
 
