@@ -9,8 +9,9 @@ class Customer extends User {
     protected $password;
     protected $isRegistered;
     protected $discount;
+    protected $creditCard;
 
-    function __construct($name, $age, $email, $password, $isRegistered, $discount, $userName, $isOnline, $preferences) {
+    function __construct($name, $age, $email, $password, $isRegistered, $discount, $userName, $isOnline, $preferences, $creditCard) {
         parent::__construct($userName, $isOnline, $preferences);
         $this->name = $name;
         $this->age = $age;
@@ -18,6 +19,7 @@ class Customer extends User {
         $this->password = $password;
         $this->isRegistered = $isRegistered;
         $this->discount = $discount;
+        $this->creditCard = $creditCard;
     }
 
     public function getDiscount(){
@@ -30,6 +32,10 @@ class Customer extends User {
 
     public function getName(){
         return $this->name;
+    }
+
+    public function payOrder($productPrice){
+        return $this -> creditCard - $productPrice;
     }
 }
 
