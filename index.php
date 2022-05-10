@@ -7,9 +7,10 @@
 
     $caniniGattiniShop = new Shop ("Canini e Gattini carini", "www.caniniegattini.com", 'caniegatti@gmail.com', 'IT000E444W', 'Roma (Italia), Via Del Campo 45', 'Pedro La Cipolla', true);
 
-    $bone = new Toy ('Osso biricchino', 25, true, 'FNJEDF32', true, 'Toy');
+    $bone = new Toy ('Osso biricchino', 40, true, 'FNJEDF32', true, 'Toy');
 
-    $userBanana33 = new Customer ('Checco Zalone', 27, 'banana33@gmail.com', 'BANANA33', false, null, 'Banana33', true, null, 100);
+    $userBanana33 = new Customer ('Checco', 'Zalone', 27, 'banana33@gmail.com','Banana33', true, null, true, null, 100);
+
 
 ?>
 
@@ -30,20 +31,28 @@
         var_dump($bone);
         var_dump($userBanana33);
 
-        echo $userBanana33->getName()    
+        echo $userBanana33->getName();    
+
+        
     ?>
 
     <br>
 
     <?php 
-        echo 'Ciao Checco Zalone, hai appena comprato osso biricchino dal costo di 25€. Ti restano' . $userBanana33->payOrder(25) . '€ di credito residuo sulla carta';
+        echo $userBanana33 -> getDiscount()
+    ?>
+
+    <br>
+
+    <?php 
+        echo 'Ciao ' . $userBanana33-> getName() . ' , hai appena comprato osso biricchino dal costo di 25€. Ti restano ' . $userBanana33->payOrder($bone->getPrice()) . '€ di credito residuo sulla carta.';
     ?>
 
     <br>
 
     <?php 
     
-        echo $bone -> getPrice();
+        echo 'Il prezzo totale è: € ' . $bone -> getPrice();
 
     ?>
 </body>
