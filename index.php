@@ -7,7 +7,7 @@
 
     $caniniGattiniShop = new Shop ("Canini e Gattini carini", "www.caniniegattini.com", 'caniegatti@gmail.com', 'IT000E444W', 'Roma (Italia), Via Del Campo 45', 'Pedro La Cipolla', true);
 
-    $bone = new Toy ('Osso biricchino', 40, true, 'FNJEDF32', true, 'Toy');
+    $bone = new Toy ('Osso biricchino', 40, 'Gioco per cani', true, 'FNJEDF32', true);
 
     $userBanana33 = new Customer ('Checco', 'Zalone', 27, 'banana33@gmail.com','Banana33', true, null, true, null, 100);
 
@@ -40,6 +40,18 @@
 
     <?php 
         echo $userBanana33 -> getDiscount()
+    ?>
+
+    <br>
+
+    <?php 
+        if($bone instanceof Product){
+            echo $bone -> getProductName() . ' ';
+        }
+
+        if($bone instanceof Toy){
+            echo $bone -> getProductName();
+        }
     ?>
 
     <br>

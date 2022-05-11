@@ -1,12 +1,25 @@
 <?php 
 
 class Product {
+    protected $productName;
+    protected $price;
+    protected $description;
     protected $isRefoundable;
-    protected $type;
 
-    function __construct($isRefoundable, $type){
+    function __construct($productName, $price, $description, $isRefoundable){
+        $this->productName = $productName;
+        $this->price = $price;
+        $this->description = $description;
         $this->isRefoundable=$isRefoundable;
-        $this->type=$type;
     }
+
+    public function getProductName(){
+        return $this->productName;
+    }
+    
+    public function getPrice(){
+        return $this-> price;
+    }
+
 }
 ?>
